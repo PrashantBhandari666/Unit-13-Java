@@ -171,10 +171,10 @@ public class CreateTable {
         String url ="jdbc:mysql://localhost/school";
         String user="root";
         String password="";
+        String query= "CREATE TABLE student (StudentID int,FirstName varchar(255),LastName varchar(255),RollNo int,City varchar(255));";
         try {
             Connection con = DriverManager.getConnection(url, user, password);
             Statement s = con.createStatement();
-            String query= "CREATE TABLE student (StudentID int,FirstName varchar(255),LastName varchar(255),RollNo int,City varchar(255));";
             s.executeUpdate(query);
             System.out.println("Table Created");
             con.close();
@@ -235,13 +235,13 @@ You create a ResultSet by executing a Statement or PreparedStatement, like this:
 
 ```Java
 Statement statement = connection.createStatement();
-ResultSet result = statement.executeQuery("select * from people");
+ResultSet result = statement.executeQuery("SELECT * FROM people");
 ```
 
 Or like this:
 
 ```Java
-String sql = "select * from people";
+String sql = "SELECT * FROM people";
 PreparedStatement statement = connection.prepareStatement(sql);
 ResultSet result = statement.executeQuery();
 ```
