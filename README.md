@@ -171,10 +171,10 @@ public class CreateTable {
         String url ="jdbc:mysql://localhost/school";
         String user="root";
         String password="";
+        String query= "CREATE TABLE student (StudentID int,FirstName varchar(255),LastName varchar(255),RollNo int,City varchar(255));";
         try {
             Connection con = DriverManager.getConnection(url, user, password);
             Statement s = con.createStatement();
-            String query= "CREATE TABLE student (StudentID int,FirstName varchar(255),LastName varchar(255),RollNo int,City varchar(255));";
             s.executeUpdate(query);
             System.out.println("Table Created");
             con.close();
